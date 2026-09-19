@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "OctoDog",
+  "version": "1.0.0",
+  "description": "OctoDog: a small circular hub with 4 extendable arrows. Place up to 4 click targets and fire them with keys 1-4.",
+  "permissions": [
+    "storage"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Toggle OctoDog (Alt+Shift+M)"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}
